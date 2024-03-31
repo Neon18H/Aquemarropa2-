@@ -74,9 +74,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: Colors.white,
                 child: Center(
                   child: Image.asset(
-                    'assets/mi_imagen.png', // Ruta de la imagen local
-                    width: 80,
-                    height: 80,
+                    'assets/Conejomorado.png', // Ruta de la imagen local
+                    width: 200,
+                    height: 200,
                     fit: BoxFit.contain, // Ajuste de la imagen
                   ),
                 ),
@@ -88,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: Colors.white,
                 child: Center(
                   child: Text(
-                    'Texto', // Texto en una caja
+                    'Comer empanadas', // Texto en una caja
                     style: TextStyle(fontSize: 16),
                   ),
                 ),
@@ -110,7 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Text(
                     'Tiempo restante:',
-                    style: TextStyle(fontSize: 18),
+                    style: TextStyle(fontSize: 18, color: Colors.white),
                   ),
                   Text(
                     _formatTime(
@@ -138,3 +138,4 @@ void main() {
     home: HomeScreen(),
   ));
 }
+

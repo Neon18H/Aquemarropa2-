@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/main.dart';
 import 'package:flutter_application_1/src/pages/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -13,11 +14,11 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    var d = const Duration(seconds: 4);
+    var d = const Duration(seconds: 3);
     Future.delayed(d, () {
       Navigator.pushAndRemoveUntil(context,
           MaterialPageRoute(builder: (context) {
-        return HomeScreen();
+        return MyHomePage(title: '',);
       }), (route) => false);
     });
   }
