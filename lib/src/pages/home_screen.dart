@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -10,13 +10,13 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   late Timer _timer;
-  int _totalTimeInSeconds =
+  final int _totalTimeInSeconds =
       3600; // Tiempo total en segundos (por ejemplo: 1 hora = 3600 segundos)
   int _remainingTimeInSeconds = 3600; // Tiempo restante en segundos
 
   // Método para iniciar el temporizador
   void _startTimer() {
-    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() {
         if (_remainingTimeInSeconds > 0) {
           _remainingTimeInSeconds--;
@@ -52,19 +52,18 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 4, 20, 9), // Fondo gris
+      backgroundColor: const Color.fromARGB(255, 4, 20, 9), // Fondo gris
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Padding(
-            padding:
-                const EdgeInsets.only(left: 20), // Ajuste de espaciado lateral
+          const Padding(
+            padding: EdgeInsets.only(left: 20), // Ajuste de espaciado lateral
             child: Text(
               'Título',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
           ),
-          SizedBox(height: 20), // Espacio entre el título y las cajas
+          const SizedBox(height: 20), // Espacio entre el título y las cajas
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -81,41 +80,43 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              SizedBox(width: 20), // Espacio entre las dos cajas
+              const SizedBox(width: 20), // Espacio entre las dos cajas
               Container(
                 width: 200,
                 height: 200,
                 color: Colors.white,
-                child: Center(
+                child: const Center(
                   child: Text(
-                    'Comer empanadas', // Texto en una caja
-                    style: TextStyle(fontSize: 16),
+                    '"Comer"'
+                    'Empanadas"', // Texto en una caja
+                    style: TextStyle(fontSize: 16, color: Colors.purple),
                   ),
                 ),
               ),
             ],
           ),
-          SizedBox(height: 20), // Espacio entre las cajas y el temporizador
+          const SizedBox(
+              height: 20), // Espacio entre las cajas y el temporizador
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Container(
               width: double.infinity,
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 66, 7, 177),
+                color: const Color.fromARGB(255, 66, 7, 177),
                 borderRadius: BorderRadius.circular(20), // Bordes circulares
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Tiempo restante:',
                     style: TextStyle(fontSize: 18, color: Colors.white),
                   ),
                   Text(
                     _formatTime(
                         _remainingTimeInSeconds), // Mostrar el tiempo restante
-                    style: TextStyle(fontSize: 18, color: Colors.white),
+                    style: const TextStyle(fontSize: 18, color: Colors.white),
                   ),
                 ],
               ),
@@ -127,15 +128,14 @@ class _HomeScreenState extends State<HomeScreen> {
         onPressed: () {
           _startTimer(); // Iniciar el temporizador al presionar el botón flotante
         },
-        child: Icon(Icons.play_arrow),
+        child: const Icon(Icons.play_arrow),
       ),
     );
   }
 }
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     home: HomeScreen(),
   ));
 }
-
