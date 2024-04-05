@@ -1,11 +1,10 @@
-///File download from FlutterViz- Drag and drop a tools. For more details visit https://flutterviz.io/
-
-///File download from FlutterViz- Drag and drop a tools. For more details visit https://flutterviz.io/
+// ignore: file_names
 
 import 'package:flutter/material.dart';
 import 'Iniciar_sesion.dart';
 
 class Registrar extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

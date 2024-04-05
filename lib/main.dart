@@ -43,15 +43,15 @@ class _MenuLayoutState extends State<MenuLayout> {
         children: [
           _buildOffstageNavigator(0, const HomeScreen()),
           _buildOffstageNavigator(2, const HomeScreen()),
-          _buildOffstageNavigator(5, Registrar()),
+          _buildOffstageNavigator(3, Registrar()),
           _buildBottomNavigationBar(),
         ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
-        tooltip: 'Registrar',
+        tooltip: 'Sube tu diseño :)',
         child: const Icon(
-          Icons.add,
+          Icons.face_sharp,
           color: Colors.pink,
         ),
       ),
@@ -90,13 +90,18 @@ class _MenuLayoutState extends State<MenuLayout> {
           ),
           SalomonBottomBarItem(
             icon: Icon(Icons.star_rate_rounded),
-            title: Text("Favorites"),
+            title: Text("Top"),
             selectedColor: Colors.pink,
           ),
           SalomonBottomBarItem(
             icon: Icon(Icons.people_rounded),
-            title: Text("Profile"),
+            title: Text("Register"),
             selectedColor: Colors.pink,
+          ),
+           SalomonBottomBarItem(
+            icon: Icon(Icons.circle, color: Colors.white,),
+            title: Text(""),
+            selectedColor: Colors.white,
           ),
         ],
       ),

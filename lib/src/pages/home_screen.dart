@@ -56,14 +56,31 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                child: Center(
+                  child: Image.asset(
+                    'assets/Logo-Aquemarropa.png', // Ruta de la imagen local // Ajuste de la imagen
+                    width: 300,
+                    height: 300,
+                  ),
+                ),
+              ),
+            ],
+            ),
           const Padding(
             padding: EdgeInsets.only(left: 20), // Ajuste de espaciado lateral
+
             child: Text(
-              'Título',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              'Una pascua muy'
+
+                'egg-special',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.pink),
             ),
           ),
-          const SizedBox(height: 20), // Espacio entre el título y las cajas
+          const SizedBox(height: 100), // Espacio entre el título y las cajas
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
