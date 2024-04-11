@@ -1,7 +1,11 @@
+import 'dart:io';
+import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/src/pages/Registrar.dart';
 import 'package:flutter_application_1/src/pages/home_screen.dart';
 import 'package:flutter_application_1/src/pages/splash_screen.dart';
+import 'package:flutter_application_1/src/pages/uploaded_file.dart';
+import 'package:flutter_application_1/src/pages/upload_files.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 void main() => runApp(const MyApp());
@@ -35,6 +39,8 @@ class MenuLayout extends StatefulWidget {
 
 class _MenuLayoutState extends State<MenuLayout> {
   int _currentIndex = 0;
+  Uint8List? _imageBytes;
+  File? _file;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +49,13 @@ class _MenuLayoutState extends State<MenuLayout> {
         children: [
           _buildOffstageNavigator(0, const HomeScreen()),
           _buildOffstageNavigator(2, const HomeScreen()),
+          _buildOffstageNavigator(
+              1,
+              UploadedFileScreen(
+                  imageBytes: _imageBytes ?? Uint8List.fromList([]),
+                  file: _file ?? File(''))),
           _buildOffstageNavigator(3, Registrar()),
+          _buildOffstageNavigator(5, FileUploadScreen()),
           _buildBottomNavigationBar(),
         ],
       ),
@@ -98,8 +110,11 @@ class _MenuLayoutState extends State<MenuLayout> {
             title: Text("Register"),
             selectedColor: Colors.pink,
           ),
-           SalomonBottomBarItem(
-            icon: Icon(Icons.circle, color: Colors.white,),
+          SalomonBottomBarItem(
+            icon: Icon(
+              Icons.circle,
+              color: Colors.white,
+            ),
             title: Text(""),
             selectedColor: Colors.white,
           ),
